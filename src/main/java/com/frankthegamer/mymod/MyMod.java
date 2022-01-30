@@ -1,5 +1,6 @@
 package com.frankthegamer.mymod;
 
+import com.frankthegamer.mymod.setup.Registration;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -24,6 +25,8 @@ public class MyMod
     private static final Logger LOGGER = LogManager.getLogger();
 
     public MyMod() {
+        Registration.register();
+
         // Register the setup method for modloading
         FMLJavaModLoadingContext.get().getModEventBus().addListener(this::setup);
         // Register the enqueueIMC method for modloading
